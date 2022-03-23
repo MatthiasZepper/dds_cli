@@ -4,9 +4,8 @@ on:
   push:
     tags:
       - 'v*' #if a push with a version tag like v0.0.2 is recorded, trigger release and build
-    branches:
-      - '*'
-      - '!master'
+    branches-ignore:
+      - master
 
 jobs:
 
