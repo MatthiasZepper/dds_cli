@@ -3,7 +3,7 @@ import os
 
 version = {}
 package_root = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(package_root, "dds_cli/version.py")) as fp:
+with open(os.path.join(package_root, "version.py")) as fp:
     exec(fp.read(), version)
 VERSION = version["__version__"]
 
