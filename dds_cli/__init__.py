@@ -7,12 +7,14 @@ import prompt_toolkit
 import rich.console
 import sys
 
+from dds_cli.version import __version__ as version_number
 
 ###############################################################################
 # PROJECT SPEC ################################################# PROJECT SPEC #
 ###############################################################################
 
 __title__ = "Data Delivery System"
+__version__ = version_number
 __url__ = "https://delivery.scilifelab.se/"
 __author__ = "SciLifeLab Data Centre"
 __author_email__ = "datacentre@scilifelab.se"
@@ -26,14 +28,6 @@ __all__ = [
     "dds_questionary_styles",
 ]
 
-
-try: #during build, get the version information. Afterwards use the set specification.
-    __version__
-except NameError:
-    version = {}
-    with open(pathlib.Path(__file__).parent / pathlib.Path("version.py")) as fp:
-        exec(fp.read(), version)
-    __version__ = version["__version__"]
 
 ###############################################################################
 # VARIABLES ####################################################### VARIABLES #
