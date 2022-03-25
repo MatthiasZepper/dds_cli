@@ -3,7 +3,6 @@
 import datetime
 import os
 import pathlib
-import pkg_resources
 import prompt_toolkit
 import rich.console
 import sys
@@ -14,7 +13,6 @@ import sys
 ###############################################################################
 
 __title__ = "Data Delivery System"
-__version__ = pkg_resources.get_distribution("dds_cli").version
 __url__ = "https://delivery.scilifelab.se/"
 __author__ = "SciLifeLab Data Centre"
 __author_email__ = "datacentre@scilifelab.se"
@@ -27,7 +25,10 @@ __all__ = [
     "FileSegment",
     "dds_questionary_styles",
 ]
-
+version = {}
+with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "version.py")) as fp:
+    exec(fp.read(), version)
+__version__ = version["__version__"]
 
 ###############################################################################
 # VARIABLES ####################################################### VARIABLES #
