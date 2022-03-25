@@ -26,7 +26,7 @@ __all__ = [
     "dds_questionary_styles",
 ]
 version = {}
-with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "version.py")) as fp:
+with open("version.py") as fp:
     exec(fp.read(), version)
 __version__ = version["__version__"]
 
