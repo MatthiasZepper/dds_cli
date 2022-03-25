@@ -26,7 +26,7 @@ __all__ = [
     "dds_questionary_styles",
 ]
 version = {}
-with open(pathlib.Path(__file__).parent.absolute() / pathlib.Path("version.py")) as fp:
+with open(pathlib.Path(__file__).parent / pathlib.Path("version.py")) as fp:
     exec(fp.read(), version)
 __version__ = version["__version__"]
 
