@@ -25,10 +25,15 @@ __all__ = [
     "FileSegment",
     "dds_questionary_styles",
 ]
-version = {}
-with open(pathlib.Path(__file__).parent / pathlib.Path("version.py")) as fp:
-    exec(fp.read(), version)
-__version__ = version["__version__"]
+
+
+try: #during build, get the version information. Afterwards use the set specification.
+    __version__
+except NameError:
+    version = {}
+    with open(pathlib.Path(__file__).parent / pathlib.Path("version.py")) as fp:
+        exec(fp.read(), version)
+    __version__ = version["__version__"]
 
 ###############################################################################
 # VARIABLES ####################################################### VARIABLES #
