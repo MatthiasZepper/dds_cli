@@ -152,8 +152,9 @@ dds_on_legacy_console = rich.console.detect_legacy_windows()
 
 
 # Required to make the standalone executables build with PyInstaller work.
+from dds_cli.__main__ import dds_main
+
 if __name__ == "__main__":
-    from dds_cli.__main__ import dds_main
 
     if getattr(sys, "frozen", False):
         dds_main(sys.argv[1:])
